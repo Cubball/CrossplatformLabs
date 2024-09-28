@@ -24,3 +24,4 @@ dotnet build Build.proj -t:Test -p:Solution=Lab1
 ## Лабораторні
 Для кожної лабораторної є окрема папка із solution:
 - [Lab1](./Lab1/)
+- [Lab2](./Lab2/)

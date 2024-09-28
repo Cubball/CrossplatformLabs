@@ -3,11 +3,11 @@ using App;
 
 Console.OutputEncoding = Encoding.Unicode;
 
-int sum;
-int digitsCount;
+int count;
+List<int> numbers;
 try
 {
-    (sum, digitsCount) = IOHandler.ReadNumbersFromFile();
+    (count, numbers) = IOHandler.ReadNumbersFromFile();
 }
 catch (Exception e)
 {
@@ -15,12 +15,10 @@ catch (Exception e)
     return;
 }
 
-string max;
-string min;
+int solution;
 try
 {
-    max = NumberService.FindMaxForSumAndDigitsCount(sum, digitsCount);
-    min = NumberService.FindMinForSumAndDigitsCount(sum, digitsCount);
+    solution = Solver.Solve(count, numbers);
 }
 catch (Exception e)
 {
@@ -30,7 +28,7 @@ catch (Exception e)
 
 try
 {
-    IOHandler.WriteResultToFile(max, min);
+    IOHandler.WriteResultToFile(solution);
 }
 catch (Exception e)
 {
