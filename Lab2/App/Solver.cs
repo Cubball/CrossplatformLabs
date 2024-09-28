@@ -9,6 +9,7 @@ public static class Solver
 
     public static int Solve(int count, List<int> numbers)
     {
+        ArgumentNullException.ThrowIfNull(numbers);
         if (count is < MinNumberOfNumbers or > MaxNumberOfNumbers)
         {
             throw new ArgumentException($"Кількість чисел має бути в межах від {MinNumberOfNumbers} до {MaxNumberOfNumbers}");
