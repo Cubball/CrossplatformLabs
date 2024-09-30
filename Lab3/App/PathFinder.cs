@@ -54,7 +54,7 @@ public static class PathFinder
             }
         }
 
-        throw new InvalidOperationException("Не вдалося знайти шлях назад");
+        throw new InvalidOperationException();
     }
 
     private static void ValidatePath(string path)
