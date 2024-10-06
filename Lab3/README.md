@@ -11,9 +11,9 @@ dotnet run --project App
 ## Запуск тестів
 Виконати команду з даної папки:
 ```bash
-dotnet test
+dotnet test Tests
 ```
 Для виведення проміжних результатів:
 ```bash
-dotnet test --logger "console;verbosity=detailed"
+dotnet test --logger "console;verbosity=detailed" Tests
 ```
