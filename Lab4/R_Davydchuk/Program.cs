@@ -1,8 +1,11 @@
-﻿using ClassLib;
+﻿using System.Text;
+using ClassLib;
 using McMaster.Extensions.CommandLineUtils;
 
 const string DefaultInputFileName = "INPUT.TXT";
 const string DefaultOutputFileName = "OUTPUT.TXT";
+
+Console.OutputEncoding = Encoding.Unicode;
 
 var app = new CommandLineApplication
 {
