@@ -49,7 +49,6 @@ app.Command("run", run =>
     {
         Console.WriteLine("Specify the lab to run");
         run.ShowHelp();
-        return 1;
     });
 
     var input = run.Option("-i|--input", "Input file path", CommandOptionType.SingleValue, true);
@@ -69,7 +68,6 @@ app.Command("run", run =>
             var inputFilePath = input.HasValue() ? input.Value() : Path.Combine(folderPath, DefaultInputFileName);
             var outputFilePath = output.HasValue() ? output.Value() : Path.Combine(folderPath, DefaultOutputFileName);
             FirstLab.Execute(inputFilePath ?? "", outputFilePath ?? "");
-            return 0;
         });
     });
 
@@ -87,7 +85,6 @@ app.Command("run", run =>
             var inputFilePath = input.HasValue() ? input.Value() : Path.Combine(folderPath, DefaultInputFileName);
             var outputFilePath = output.HasValue() ? output.Value() : Path.Combine(folderPath, DefaultOutputFileName);
             SecondLab.Execute(inputFilePath ?? "", outputFilePath ?? "");
-            return 0;
         });
     });
 
@@ -105,7 +102,6 @@ app.Command("run", run =>
             var inputFilePath = input.HasValue() ? input.Value() : Path.Combine(folderPath, DefaultInputFileName);
             var outputFilePath = output.HasValue() ? output.Value() : Path.Combine(folderPath, DefaultOutputFileName);
             ThirdLab.Execute(inputFilePath ?? "", outputFilePath ?? "");
-            return 0;
         });
     });
 
@@ -115,15 +111,13 @@ app.OnExecute(() =>
 {
     Console.WriteLine("Specify a subcommand");
     app.ShowHelp();
-    return 1;
 });
 
 try
 {
-    return app.Execute(args);
+    app.Execute(args);
 }
 catch (Exception e)
 {
     Console.WriteLine($"An error occurred: {e.Message}");
-    return 1;
 }

@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab4", "Lab4", "{61E9C6B8-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLib", "Lab4\ClassLib\ClassLib.csproj", "{CB08D473-6643-409E-8B1E-327AA968C696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R_Davydchuk", "Lab4\R_Davydchuk\R_Davydchuk.csproj", "{D49E5447-CBFE-4B8A-909F-440364DC2F24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "Lab4\App\R_Davydchuk.csproj", "{D49E5447-CBFE-4B8A-909F-440364DC2F24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

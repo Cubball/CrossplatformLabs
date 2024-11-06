@@ -2,7 +2,7 @@
 ## Запуск застосунку
 Перейдіть у папку застосунку, з цієї папки виконайте:
 ```bash
-cd R_Davydchuk
+cd App
 ```
 Запустіть застосунок:
 ```bash
@@ -13,7 +13,7 @@ dotnet run
 Для того, щоб на віртуальних машинах запустився застосунок, у вас має бути запущений приватний репозиторій BaGet на порту 5000.
 У ньому має бути застоснок як глобальний пакет. Щоб опублікувати пакет, виконайте:
 ```bash
-cd R_Davydchuk
+cd App
 dotnet pack --configuration Release
 dotnet nuget push ./bin/Release/R_Davydchuk.1.0.0.nupkg --source http://localhost:5000/v3/index.json
 ```
