@@ -1,0 +1,47 @@
+@model Booking
+
+@{
+    ViewData["Title"] = "Booking Details";
+}
+
+<div class="container mt-4">
+    <h2>Booking Details</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Customer</dt>
+                <dd class="col-sm-9">@Model.Customer.FirstName @Model.Customer.Surname</dd>
+
+                <dt class="col-sm-3">Contact Details</dt>
+                <dd class="col-sm-9">
+                    <div>Phone: @Model.Customer.PhoneNumber</div>
+                    <div>Cell: @Model.Customer.CellphoneNumber</div>
+                    <div>Email: @Model.Customer.EmailAddress</div>
+                </dd>
+
+                <dt class="col-sm-3">Booking Date/Time</dt>
+                <dd class="col-sm-9">@Model.DateTableBookedForUTC.ToLocalTime()</dd>
+
+                <dt class="col-sm-3">Table</dt>
+                <dd class="col-sm-9">@Model.Table.Details (Table @Model.TableNumber)</dd>
+
+                <dt class="col-sm-3">Party Size</dt>
+                <dd class="col-sm-9">@Model.NumberInParty people</dd>
+
+                <dt class="col-sm-3">Booking Made</dt>
+                <dd class="col-sm-9">@Model.DateBookingMadeUTC.ToLocalTime()</dd>
+
+                @if (!string.IsNullOrEmpty(Model.Customer.OtherDetails))
+                {
+                    <dt class="col-sm-3">Additional Notes</dt>
+                    <dd class="col-sm-9">@Model.Customer.OtherDetails</dd>
+                }
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Search" class="btn btn-secondary">Back to Search</a>
+    </div>
+</div>
